@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import 'screens/check_wifi.dart';
+import 'screens/home.dart';
+import 'screens/home_assistant_auth.dart';
+import 'screens/home_assistant_search.dart';
 import 'screens/intro.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class CustomRoute {
   String route;
@@ -14,6 +16,9 @@ class CustomRoute {
 final routerMap = [
   CustomRoute("/", const IntroScreen()),
   CustomRoute("/check_wifi", const CheckWifiScreen()),
+  CustomRoute("/ha_search", const HomeAssistantSearchScreen()),
+  CustomRoute("/ha_auth", const HomeAssistantAuthScreen()),
+  CustomRoute("/home", const HomeScreen())
 ];
 
 final finalRoutes = routerMap
