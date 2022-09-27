@@ -1,10 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'routes.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const ProviderScope(child: HaKodi()));
 }
 
+class HaKodi extends ConsumerWidget {
+  const HaKodi({super.key});
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return MaterialApp.router(
+      routerConfig: router,
+    );
+  }
+}
+
+/*
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -99,3 +112,4 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+*/

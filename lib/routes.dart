@@ -9,7 +9,7 @@ import 'screens/intro.dart';
 
 class CustomRoute {
   String route;
-  StatelessWidget screen;
+  Widget screen;
   CustomRoute(this.route, this.screen);
 }
 

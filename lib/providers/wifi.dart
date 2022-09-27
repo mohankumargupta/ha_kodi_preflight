@@ -1,5 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 
-@immutable
-class WifiConnection {}
+final wifiStatusProvider = FutureProvider<ConnectivityResult>((ref) {
+  return Connectivity().checkConnectivity();
+});
