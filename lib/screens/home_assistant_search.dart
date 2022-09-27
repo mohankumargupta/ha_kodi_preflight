@@ -17,9 +17,12 @@ class HomeAssistantSearchScreen extends StatelessWidget {
             autofocus: true,
             child: Center(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
                 children: const [
-                  Text("Home Assistant Search"),
+                  Flexible(
+                      child: Padding(
+                          padding: EdgeInsets.symmetric(vertical: 48.0),
+                          child: Text("Searching for Home Assistant ...",
+                              style: TextStyle(fontSize: 48.0)))),
                 ],
               ),
             ),

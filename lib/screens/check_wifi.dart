@@ -23,9 +23,12 @@ class CheckWifiScreen extends ConsumerWidget {
           autofocus: true,
           child: Center(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Flexible(child: Text("Checking Wifi")),
+                const Flexible(
+                    child: Padding(
+                        padding: EdgeInsets.symmetric(vertical: 48.0),
+                        child: Text("Checking Wifi",
+                            style: TextStyle(fontSize: 48.0)))),
                 Expanded(
                   child: Center(
                       child: wifi.when(

@@ -19,15 +19,20 @@ class IntroScreen extends StatelessWidget {
             children: [
               const Flexible(
                 child: Padding(
-                  padding: EdgeInsets.only(top: 48.0),
-                  child: Text("Press OK to continue"),
+                  padding: EdgeInsets.symmetric(vertical: 48.0),
+                  child: Text(
+                    "Press OK to continue",
+                    style: TextStyle(
+                      fontSize: 48.0,
+                    ),
+                  ),
                 ),
               ),
               Expanded(
                 child: Center(
                     child: Image.asset(
                   "assets/images/sony-remote-internet-lounge.jpg",
-                  scale: 0.8,
+                  scale: 0.7,
                 )),
               ),
             ],

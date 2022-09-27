@@ -17,9 +17,12 @@ class HomeAssistantAuthScreen extends StatelessWidget {
             autofocus: true,
             child: Center(
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
                 children: const [
-                  Text("Home Assistant Auth"),
+                  Flexible(
+                      child: Padding(
+                          padding: EdgeInsets.symmetric(vertical: 48.0),
+                          child: Text("Home Assistant Authorization",
+                              style: TextStyle(fontSize: 48.0)))),
                 ],
               ),
             ),
