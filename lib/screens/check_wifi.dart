@@ -1,4 +1,3 @@
-import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -10,7 +9,7 @@ class CheckWifiScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final wifi = ref.watch(wifiStatusProvider);
+    final wifiDetails = ref.watch(wifiProvider);
 
     return Scaffold(
       body: CallbackShortcuts(
@@ -31,22 +30,16 @@ class CheckWifiScreen extends ConsumerWidget {
                             style: TextStyle(fontSize: 48.0)))),
                 Expanded(
                   child: Center(
-                      child: wifi.when(
+                      child: wifiDetails.when(
                           data: (item) {
-                            switch (item) {
-                              case ConnectivityResult.wifi:
-                                return const Text("Wifi connection");
-
-                              case ConnectivityResult.ethernet:
-                                return const Text("Ethernet connection");
-
-                              default:
-                                return const Text(
-                                    "No connection(wifi or ethernet)");
+                            if (item == null) {
+                              return const Text("wifi not connected");
+                            } else {
+                              return Text("${item.ssid} ${item.ipAddress}");
                             }
                           },
-                          loading: () {},
-                          error: (e, st) {})),
+                          loading: () => const Text("loading..."),
+                          error: (e, st) => const Text("error"))),
                 )
               ],
             ),
